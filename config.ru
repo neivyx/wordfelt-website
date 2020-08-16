@@ -7,4 +7,3 @@ require './config/environment'
 run ApplicationController
 use PoemsController
 use UsersController
-use UseRsController
