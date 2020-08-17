@@ -1,1 +1,16 @@
-<h1>This is the Model's index page.</h1>
+<h1>Show a list of all of this user's poems as links to the single poem</h1>
+
+
+<% @poems.each do |poem|%>
+  <strong><a href="/poems/<%= poem.id %>"><%= poem.title %></a></strong>
+  <h5>Poem<%=poem.poem%></h5>
+   
+  <br>
+  <% end %>
+
+
+
+
+
+
+
