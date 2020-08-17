@@ -2,12 +2,12 @@ class PoemsController < ApplicationController
 
   get '/' do
     @poems = Poem.all
-    erb :'todos/index'
+    erb :'poems/index'
   end
 
   get "/poems/new" do
     
-    erb :"/poem/new"
+    erb :"/poems/new"
   end
 
   post "/poems" do
