@@ -5,11 +5,24 @@ class PoemsController < ApplicationController
     erb :'todos/index'
   end
 
-  post '/' do 
-    @poem = Poem.create(params)
-    redirect '/'
+  get "/poems/new" do
+    
+    erb :"/poem/new"
   end
 
+  post "/poems" do
+    redirect_if_not_logged_in
+    
+        if params[:title] != "" && params[:poem] != "" &&
+      
+            @poem = Poem.create(params)
+
+            redirect "/poems/#{@poem.id}"
+        else
+            redirect '/poems/new'
+        end
+
+  end
 
 end
 
